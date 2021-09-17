@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap');
+* {
+    margin: 0;
+    padding:0;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
+*::-webkit-scrollbar{
+    width: .5rem;
+}
+body, html {
+    overflow: auto;
+  }
+  
+.contPrincipal{
+    overflow: hidden;
+}
+.cont{
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+}
+
+.home1,
+.home2,
+.home3,
+.home4{
+    width:100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+////////////////     home 1 /////////////////////////
+
+$backgroundColorDark:rgb(11, 15, 27);
+
+
+
+.home1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: $backgroundColorDark;
+    /* background: linear-gradient(150deg, rgb(37, 40, 51), rgb(29, 40, 56), rgb(26, 38, 90) );
+    background-size: 400% 300%;
+    animation: animationBackground 2s ease infinite; */
+}
+
+@keyframes animationBackground {
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+    
+}
+.contTitles{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    left: -25rem;
+    top: -6rem;
+    width: 50rem;
+    height: 15rem;
+}
+.contBtnInfo{
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 10rem;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 25%;
+    z-index: 6;
+    right: 15%;
+    // background-color: whitesmoke;
+
+}
+.info{
+    position: relative;
+    top:-40%;
+    font-size: 1.5rem;
+    color: rgba(182, 224, 230, 0.692);
+}
+.btnMas{
+    position: absolute;
+    bottom: 0%;
+    z-index: 5;
+    background:none;
+    border: none;
+    color: rgba(245, 245, 245, 0.712);
+    font-size: 5rem;
+    background-color: rgba(137, 208, 236, 0.164);
+    backdrop-filter: blur(6px);
+    display: flex;
+    // text-align: center;
+    justify-content: center;
+    border:1px solid transparent;
+    align-items: center;
+    height:6rem;
+    opacity: .7;
+    width:10rem;
+    border-radius: 2%;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.739);
+    transition: .1s;
+
+}
+.contBtnInfo:hover .btnMas{
+    transition: .1s;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.993);
+    opacity: 1;
+    border:1px solid rgba(115, 149, 192, 0.287);
+    color: rgba(226, 226, 226, 0.801);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+// .btnMas:hover{
+
+// }
+.btnMas::before{
+    transition: .2s;
+    position: absolute;
+    top: 0;
+    content: 'Ver más!';
+    top:-40%;
+    font-size: 1.5rem;
+    color: rgba(182, 224, 230, 0.692);
+    opacity: 0;
+}
+.btnMas:hover::before{
+    transition: .2s;
+    opacity: 1;
+}
+
+
+.title2{
+    position: absolute;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: 8rem;
+    white-space: nowrap;
+    text-align: center;
+    z-index: 6;
+    color: rgb(173, 202, 207);
+    animation: changingtextcolor 10s infinite; 
+}
+.title2::after{
+    position: absolute;
+    bottom: -0%;
+    left: 20%;
+    white-space: nowrap;
+    text-align: end;
+    /* background-color: blue; */
+    transform: skewY(-5deg) translateX(2%) translateY(5%);
+    color: rgba(148, 181, 184, 0.376);
+    opacity: .7;
+    content: '';
+    animation: changingtext 5s linear infinite;
+
+}
+.title2::before{
+    position: absolute;
+    left: 20%;
+    bottom: 0;
+    transform: skewY(-5deg);
+    /* background-color: blueviolet; */
+    content: '';
+    animation: changingtext 5s linear infinite;
+}
+@keyframes changingtext {
+    0%{
+        content: 'FULL-STACK';
+    }
+    25%{
+        content: 'FRONT-END';
+    }
+    50%{
+        content: 'DESING UX/UI';
+    }
+    75%{
+        content: 'WEB DEVELOPER';
+    }
+    100%{
+        content: 'FULL-STACK';
+    }
+}
+@keyframes changingtextcolor {
+    0%{
+        transform:rotate(2deg) skew(1deg);
+        left: 10%;
+        top: 50%;
+    }
+    25%{
+        transform:rotate(5deg) skew(-5deg);
+        left: 20%;
+        top: 60%;
+
+    }
+    50%{
+        transform: rotate(0deg) skew(-2deg);
+        left: 25%;
+        top: 70%;
+    }
+    75%{
+        transform:rotate(5deg) skew(-5deg);
+        left: 20%;
+        top: 60%;
+
+    }
+    100%{
+        transform:rotate(2deg) skew(1deg); 
+        top: 50%;
+        left: 10%;
+
+
+    }
+}
+/* //////////////////////////////////////////////////////////////// */
+
+// .particula{
+//     // position: absolute;
+//     z-index: 5;
+//     border-radius: 50%;
+
+// }
+.particula {
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+  }
+  
+  @for $i from 1 through 30 {
+    @keyframes particle-animation-#{$i} {
+      0% {
+        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+      }
+      50% {
+        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+      }
+      100% {
+        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+      }
+    }
+    
+    .particula:nth-child(#{$i}){
+      animation: particle-animation-#{$i} 60s infinite;
+      $size: random(5) + 5 + px;
+      opacity: random(40)/100;
+      height: $size;
+      width: $size;
+      animation-delay: -$i * .2s;
+      transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+      background:rgba(255, 255, 255, 10);
+    }
+  }
+
+  //////////////////////////home 2 ///////////////////////////////
+  .home2{
+    background-color: $backgroundColorDark;
+
+}

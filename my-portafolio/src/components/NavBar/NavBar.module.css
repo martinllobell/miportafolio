@@ -1,0 +1,234 @@
+.none{
+    display: none;
+}
+.navbar{
+    z-index: 11;
+    position: relative;
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 38, 56, .3);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.title{
+    position: absolute;
+    font-size: .8rem;
+    bottom: 1%;
+    left: 43%;
+    color:rgba(216, 216, 216, 0.678);
+}
+.ico{
+    position: relative;
+    left: -25rem;
+    width: 4rem;
+    height: 80%;
+    background-color: rgba(114, 145, 155, 0.63);
+    border-radius: 5rem;
+    z-index: 3;
+}
+.contLinks{
+    display: flex;
+    width: 50%;
+    position: relative;
+    color: white;
+    justify-content: space-evenly;
+}
+.contFooter{
+    width: 5rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+
+}
+.footerCancel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.footerIco{
+    position: relative;
+    background-image: url('../../assets/arrow.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(270deg)  !important;
+    width: 4rem;
+    transition: .5s;
+    z-index: 5;
+    opacity: .5;
+    height: 3rem;
+}
+.footerIcoAct{
+    position: relative;
+    background-image: url('../../assets/arrow.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(270deg) scale(0.5);
+    width: 4rem;
+    transition: .5s;
+    left: 4rem;
+    z-index: 5;
+    opacity: .5;
+    animation: ghostFooterIcoDes ease-in .2s;
+    height: 3rem;
+}
+.footerIco::after{
+    content:'';
+    display: block;
+    background: url('../../assets/arrow.png') no-repeat;
+    background-size: 30%;
+    background-position: center;
+    position: relative;
+    bottom: 4.7rem;
+    opacity: 0;
+    width: 4rem;
+    height: 3rem;
+    transition: 0.3s;
+}
+.footerIco::before{
+    content:'';
+    display: block;
+    background: url('../../assets/arrow.png') no-repeat;
+    background-size: 50%;
+    background-position: center;
+    position: relative;
+    bottom: 1rem;
+    opacity: 0;
+    width: 4rem;
+    height: 3rem;
+    transition: .3s;
+
+}
+.footerIco:hover{
+    transition: .3s;
+    cursor: pointer;
+    opacity: 1;
+}
+.footerIco:hover::after,
+.footerIco:hover::before{
+    animation: footerAnimationA ease-in 1s infinite;
+    animation-direction: alternate;
+}
+.footerIcoAct:hover{
+    transition: .3s;
+    cursor: pointer;
+    opacity: 1;
+}
+
+@keyframes footerAnimationA{
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 0.5;
+    }
+}
+.ghostFooterDesactivate{
+    position: absolute;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    transform: translateX(-100%);
+    border-radius: 0rem 1rem 1rem 0 ;
+    background-color: rgb(35, 38, 56, .7);
+    backdrop-filter: blur(15px);
+    animation: ghostFooterDesactivate ease-in .1s;  
+}
+.ghostFooter{
+    position: absolute;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    border-radius: 0rem 1rem 1rem 0 ;
+    background-color: rgb(35, 38, 56, .7);
+    backdrop-filter: blur(15px);
+    animation: ghostFooter ease-in .2s;
+
+}
+@keyframes ghostFooter {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+
+
+    }  
+}
+@keyframes ghostFooterDesactivate {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+
+
+    }  
+}
+@keyframes ghostFooterIco {
+    from{
+        transform: translateX(100%) rotate(270deg);
+    }
+    to{
+        transform: translateX(0%) ;
+
+    }    
+}
+@keyframes ghostFooterIcoDes {
+    from{
+        transform: translateX(-100%) rotate(270deg);
+    }
+    to{
+        transform:  scale(0.5) rotate(270deg);
+
+    }
+    
+}
+.githubL,
+.gmailL,
+.whatsappL,
+.linkedinL{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 5rem;
+}
+.githubL{
+    background: url('../../assets/github.png')no-repeat rgba(248, 248, 248, 0.068);
+    background-position: center;
+    background-size: 80%;
+}
+.gmailL{
+    background: url('../../assets/gmail-logo.png') no-repeat rgba(248, 248, 248, 0.068);
+    background-position: center;
+    background-size: 80%;
+}
+.linkedinL{
+    background: url('../../assets/linkedin.png') no-repeat rgba(248, 248, 248, 0.068);
+    background-position: center;
+    background-size: 80%;
+}
+.whatsappL{
+    background: url('../../assets/whatsapp.png') no-repeat rgba(248, 248, 248, 0.068);
+    background-position: center;
+    background-size: 80%;
+}
