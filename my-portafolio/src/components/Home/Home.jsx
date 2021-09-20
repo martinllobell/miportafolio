@@ -26,6 +26,10 @@ export default function Home(){
                     <segment className={styles.contBtnInfo}>
                         <button onClick={btnscroll} className={styles.btnMas}>{`</>`}</button>
                     </segment>
+                    <section className={styles.contCV}>
+                        <h4 className={styles.textCV}>Descargar CV</h4>
+                        <a  className={styles.btnCV} href={'../../assets/CVLlobellEspañol.pdf'} download="CVLlobellEspañol.pdf"/>
+                    </section>
                     <div className={styles.contDivsprueba}>    
                         <div className={styles.particula}/>
                         <div className={styles.particula}/>
