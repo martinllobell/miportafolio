@@ -1,112 +1,95 @@
-import React, { useEffect, useState } from 'react'
-import styles from './Home.module.scss'
-import NavBar from '../NavBar/NavBar'
-import {motion} from 'framer-motion'
-import {Link} from 'react-router-dom'
+import React from "react";
+import { motion } from "framer-motion";
+import './Pages.css'
+import styles from './about.module.scss'
+import { Link } from "react-router-dom";
 
-export default function Home(){
-
-    // const[indexScroll, setIndexScroll] = useState(0)
-    // useEffect(()=>{
-    //     setIndexScroll(document.body.scrollHeight)
-    // },[])
-    // function btnscroll(){
-    //     window.scroll({
-    //         top: indexScroll/4,
-    //         behavior: 'smooth'
-    //       });
-    // }
-    const contVariables = {
-        hidden:{
-            opacity: 0,
-            y:'-10vh'
-        },
-        show:{
-            opacity:1,
-            y:0,
-            transition:{
-                type:'spring',
-                stiffness:30
-            }
-        },
-        exit:{
-            y:'-100vh',
-            transition:{
-                ease:'easeInOut',
-                duration: 0.5
-            }
+const aboutVariants = {
+    hidden:{
+        opacity:0,
+        y:'50vh'
+    },
+    show: {
+        opacity:1,
+        y:0,
+        transition:{
+            type:'spring',
+            stiffness:100
+        }
+    },
+    exit:{
+        opacity:0,
+        transition:{
+            ease:'easeInOut',
+            duration: 0.5
         }
     }
-
-    return (
-        <motion.div className={styles.contPrincipal} variants={contVariables} initial='hidden' animate='show' exit='exit'>
-            <div className={styles.cont}>
-                <div className={styles.home1}>
-                    <div className={styles.contTitles}>
-                        <h4 className={styles.title2}/>
-                    </div>
-                    <segment className={styles.contBtnInfo}>
-                        <Link path to='/about' className={styles.btnMas}>{`</>`}</Link>
-                    </segment>
-                    <section className={styles.contCV}>
-                        <h4 className={styles.textCV}>Descargar CV</h4>
-                        <a  className={styles.btnCV} href={'../../assets/CVLlobellEspañol.pdf'} download="CVLlobellEspañol.pdf"/>
-                    </section>
-                    <div className={styles.contDivsprueba}>    
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                        <div className={styles.particula}/>
-                    </div>
-                    <h1 className={styles.title}> © Martín Llobell (todos los derechos resevados)</h1>
-                </div>
+}
+export default function About(){
+    return(
+        <motion.div className='about-cont' variants={aboutVariants} initial='hidden' animate='show' exit='exit'>
+            <div className='about-subcont'>
+                <h1 className='h1-about'>MARTÍN LLOBELL</h1>
+                <div className='foto-perfil'/>
             </div>
-        </motion.div >
+            <div className='about-description'>
+                <h2 className='h2-description'>Sobre mi...</h2>
+                <p className='p-description'>Soy desarrollador de aplicaciones web, me apasiona la computación y todas sus ramas. En definitiva adoro el mundo IT. Me gusta mucho el diseño y soy muy perfeccionista, es difícil que quede conforme con un resultado sabiendo que se puede mejorar! Adoro el orden, la organización y el trabajo en equipo. A demás soy músico, toco la guitarra y el piano, unos de mis géneros preferidos son el Hard Rock y el Metal</p>
+                <Link path to='/skills' className='btn-description'>Ver Aptitudes</Link>
+            </div>
+            {/* ////// particles //////// */}
+            <div className={styles.contDivsprueba}>    
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                        <div className={styles.particula}/>
+                    </div>
+        </motion.div>
     )
 }

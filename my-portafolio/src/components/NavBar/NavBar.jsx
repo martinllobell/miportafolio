@@ -25,7 +25,6 @@ export default function NavBar (){
                     <div className={styles.whatsappL}/>
                 </div>
             </div>
-            <h1 className={styles.title}> © Martín Llobell (todos los derechos resevados)</h1>
         </div>
 
     )

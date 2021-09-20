@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap');
+$backgroundColorDark:rgb(7, 10, 17);
+
 * {
     margin: 0;
     padding:0;
@@ -10,7 +12,8 @@
     width: .5rem;
 }
 body, html {
-    overflow: auto;
+    overflow: hidden;
+    background-color: $backgroundColorDark;
   }
   
 .contPrincipal{
@@ -27,22 +30,11 @@ body, html {
     scroll-snap-type: y mandatory;
 }
 
-.home1,
-.home2,
-.home3,
-.home4{
-    width:100vw;
-    height: 100vh;
-    scroll-snap-align: start;
-    justify-content: center;
-    align-items: center;
-}
 
 
 
 ////////////////     home 1 /////////////////////////
 
-$backgroundColorDark:rgb(11, 15, 27);
 
 
 
@@ -55,6 +47,10 @@ $backgroundColorDark:rgb(11, 15, 27);
     /* background: linear-gradient(150deg, rgb(37, 40, 51), rgb(29, 40, 56), rgb(26, 38, 90) );
     background-size: 400% 300%;
     animation: animationBackground 2s ease infinite; */
+    width:100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes animationBackground {
@@ -94,6 +90,13 @@ $backgroundColorDark:rgb(11, 15, 27);
     font-size: 1.5rem;
     color: rgba(182, 224, 230, 0.692);
 }
+.title{
+    position: absolute;
+    font-size: .8rem;
+    bottom: 4%;
+    left: 43%;
+    color:rgba(216, 216, 216, 0.678);
+}
 .btnMas{
     position: absolute;
     bottom: 0%;
@@ -101,6 +104,7 @@ $backgroundColorDark:rgb(11, 15, 27);
     background:none;
     border: none;
     color: rgba(245, 245, 245, 0.712);
+    text-decoration: inherit;
     font-size: 5rem;
     background-color: rgba(137, 208, 236, 0.164);
     backdrop-filter: blur(6px);

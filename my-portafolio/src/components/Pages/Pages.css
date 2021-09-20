@@ -1,0 +1,218 @@
+/* ///////////////  ABOUT COMPONENT ////////////////// */
+
+.about-cont{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+}
+.h1-about{
+    position: relative;
+    top: 5%;
+    color: rgba(255, 255, 255, 0.753);
+    font-size: 2rem;
+}
+.h2-description{
+    position: relative;
+    top: -8%;
+    left: 23%;
+    font-size: 2rem;
+}
+.p-description{
+    width: 30vw;
+    text-align: center;
+    line-height: 4vh;
+    font-size: 1.5rem;
+}
+.btn-description{
+    transition: .3s;
+    opacity: 1;
+    position: absolute;
+    bottom: 15%;
+    right:10%;
+    width: 8vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid rgba(255, 255, 255, 0.609);
+    border-radius: 10%;
+    color: rgba(255, 255, 255, 0.863);
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    background-color: rgba(64, 160, 224, 0.068);
+    text-decoration: none;
+    z-index: 6;
+}
+.btn-description:hover{
+    transition: .6s;
+    color: white;
+    border:2px solid rgb(255, 255, 255);
+    background-color: rgba(64, 160, 224, 0.198);
+    opacity: 1;
+    animation: none;
+    letter-spacing: 1px;
+}
+
+
+.about-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    color: white;
+    width: 50vw;
+    height: 100vh;
+}
+.about-subcont{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.foto-perfil{
+    position: relative;
+    background-image: url('../../assets/fotoperfil.png');
+    background-position: center;
+    background-size: 120%;
+    border-radius: 50%;
+    opacity: .8;
+    z-index: 5;
+    border: 2px solid rgba(255, 255, 255, 0.534);
+    width: 25vw;
+    height: 50vh;
+    animation: spawn 1s ease-in-out;
+}
+@keyframes spawn {
+    from{opacity: 0;} to{opacity: .8;}
+}
+.none{
+    display: none;
+}
+/* //////////////   SKILLS PAGE       //////////////////////// */
+
+.skills-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+}
+.btn-switcher{
+    position: absolute;
+    width:10vw;
+    left: 10%;
+    z-index: 6;
+    top:20%;
+    height: 8vh;
+}
+.h3-tecnologias{
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.cont-tecngologias{
+    position: relative;
+    top: 10%;
+    display: grid;
+    width: 75vw;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    z-index: 6;
+}
+.cont-tecngologias > div{
+    transition: .3s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(195, 204, 219);
+    width: 55%;
+    height: 55%;
+    border-radius: 30%;
+    border:8px solid rgba(245, 222, 179, 0);
+    z-index: 7;
+}
+
+
+.react::before,
+.redux::before,
+.css::before,
+.sass::before,
+.html::before,
+.postgres::before,
+.javascript::before,
+.git::before,
+.nodejs::before,
+.nginex::before{
+    content: '';
+    display: flex;
+    text-align: center;
+    border-radius: 50% 50% 5% 50%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -48%;
+    left: -50%;
+    width: 100%;
+    font-weight: 800;
+    height: 40%;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    background-color: rgb(195, 204, 219);
+    opacity: 0;
+    z-index: 1;
+}
+.react:hover::before,
+.redux:hover::before,
+.css:hover::before,
+.sass:hover::before,
+.html:hover::before,
+.postgres:hover::before,
+.javascript:hover::before,
+.git:hover::before,
+.nodejs:hover::before,
+.nginex:hover::before{
+    transition: .3s;
+    opacity: 1;
+    animation: motionafter ease .1s ;
+}
+
+@keyframes motionafter {
+    from{transform: scale(0);}to{transform: scale(1);}
+}
+.react:hover,
+.redux:hover,
+.css:hover,
+.sass:hover,
+.html:hover,
+.postgres:hover,
+.javascript:hover,
+.git:hover,
+.nodejs:hover,
+.nginex:hover{
+    transition: .3s;
+    border: 8px solid rgba(0, 8, 83, 0.65);
+}
+.react::before{content: 'React & R.Native';}
+.redux::before{content: 'Redux';}
+.css::before{content: 'CSS3';}
+.sass::before{content: 'SASS-SCSS';}
+.html::before{content: 'HTML5';}
+.postgres::before{content: 'PostgreSQL';}
+.javascript::before{content: 'JavaScript';}
+.git::before{content: 'Git';}
+.nodejs::before{content: 'Node.js';}
+.nginex::before{content: 'Nginex';}
+
