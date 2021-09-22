@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import styles from './Home.module.scss'
 import NavBar from '../NavBar/NavBar'
 import {motion} from 'framer-motion'
+import {ghostDivMotionVariants, btnGhostMotion} from './variantsMotion'
 import {Link} from 'react-router-dom'
 
 export default function Home(){
-
+    const [ghost, setGhost] = useState('')
     // const[indexScroll, setIndexScroll] = useState(0)
     // useEffect(()=>{
     //     setIndexScroll(document.body.scrollHeight)
@@ -48,9 +49,15 @@ export default function Home(){
                     <segment className={styles.contBtnInfo}>
                         <Link path to='/about' className={styles.btnMas}>{`</>`}</Link>
                     </segment>
-                    <section className={styles.contCV}>
-                        <h4 className={styles.textCV}>Descargar CV</h4>
-                        <a  className={styles.btnCV} href={'../../assets/CVLlobellEspañol.pdf'} download="CVLlobellEspañol.pdf"/>
+                    <section className={styles.contRedes}>
+                        <div onClick={()=>{setGhost('')}} className={ghost===''?styles.none:styles.ghotsdesactivate}/>
+                        <motion.div className={styles.contLinksRedes} variants={ghostDivMotionVariants} initial='hidden' animate={ghost} exit='exit'>
+                            <div className={styles.githubL}></div>
+                            <div className={styles.gmailL}></div>
+                            <div className={styles.whatsappL}></div>
+                            <div className={styles.linkedinL}></div>
+                        </motion.div>
+                        <motion.button onClick={()=>{ghost==''?setGhost('show'):setGhost('')}} className={ghost==''?styles.btnRedes:styles.btnRedesDes}><h4 className={styles.redesH4}>Redes Sociales!</h4></motion.button>
                     </section>
                     <div className={styles.contDivsprueba}>    
                         <div className={styles.particula}/>

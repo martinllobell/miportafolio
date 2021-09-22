@@ -15,10 +15,24 @@
     top: 0;
     right: 0;
 }
-
+.link{
+    transition: .3s;
+    position: sticky;
+    font-size: 100%;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.link:hover{
+    transition: .3s;
+    transform: scale(1.1);
+    color: rgb(167, 252, 255);
+}
 .ico{
-    position: relative;
-    left: -25rem;
+    position: absolute;
+    left: 2%;
     width: 4rem;
     height: 80%;
     background-color: rgba(114, 145, 155, 0.63);
@@ -30,7 +44,7 @@
     width: 50%;
     position: relative;
     color: white;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 .contFooter{
     width: 5rem;
@@ -198,31 +212,17 @@
     }
     
 }
-.githubL,
-.gmailL,
-.whatsappL,
-.linkedinL{
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 5rem;
-}
-.githubL{
-    background: url('../../assets/github.png')no-repeat rgba(248, 248, 248, 0.068);
-    background-position: center;
-    background-size: 80%;
-}
-.gmailL{
-    background: url('../../assets/gmail-logo.png') no-repeat rgba(248, 248, 248, 0.068);
-    background-position: center;
-    background-size: 80%;
-}
-.linkedinL{
-    background: url('../../assets/linkedin.png') no-repeat rgba(248, 248, 248, 0.068);
-    background-position: center;
-    background-size: 80%;
-}
-.whatsappL{
-    background: url('../../assets/whatsapp.png') no-repeat rgba(248, 248, 248, 0.068);
-    background-position: center;
-    background-size: 80%;
+
+@media (max-width:557px){
+    .contLinks{
+        position: absolute;
+        right: 5%;
+        width: 70%;
+    }
+    .link{
+        font-size: 3.3vw;
+        white-space:nowrap;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
 }

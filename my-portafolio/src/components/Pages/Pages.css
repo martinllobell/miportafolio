@@ -79,6 +79,7 @@
     position: relative;
     background-image: url('../../assets/fotoperfil.png');
     background-position: center;
+    background-repeat: no-repeat;
     background-size: 120%;
     border-radius: 50%;
     opacity: .8;
@@ -94,6 +95,49 @@
 .none{
     display: none;
 }
+@media(max-width:557px){
+    .about-cont{
+        flex-direction: column;
+    }
+    .foto-perfil{
+        top: 8%;
+        width: 40vw;
+        height: 20vh;
+    }
+    .about-subcont{
+        width: 100%;
+        height: 50vh;
+        flex-direction: column;
+    }
+    .about-description{
+        position: relative;
+        top: -6%;
+        width: 100vw;
+        align-items: center;
+        text-align: center;
+        height: 50vh;
+    }
+    .h2-description{
+        top: 0;
+        left: 0;
+        font-size: 5vw;
+    }
+    .p-description{
+        top: 0;
+        text-align: start;
+        font-size: 4vw;
+        height: 100%;
+        width: 80%;
+    }
+    .btn-description{
+        bottom: -7%;
+        left: 0;
+        transform: translateX(75%);
+        width: 40vw;
+        height: 5vh;
+    }
+
+}
 /* //////////////   SKILLS PAGE       //////////////////////// */
 
 .skills-cont{
@@ -105,6 +149,10 @@
     height: 100vh;
 }
 .btn-switcher{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
     position: absolute;
     width:10vw;
     left: 10%;
@@ -114,25 +162,30 @@
 }
 .h3-tecnologias{
     position: relative;
+    top: 10%;
     text-align: center;
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: white;
 }
-
+.p-aptitud{
+    position: absolute;
+    top: 3%;
+    font-size: 17px;
+    font-weight: 600;
+}
 .cont-tecngologias{
     position: relative;
-    top: 10%;
+    top: 20%;
     display: grid;
     width: 75vw;
     height: 60vh;
     align-items: center;
-    justify-content: center;
     justify-items: center;
     grid-template-columns: repeat(5, 1fr);
     z-index: 6;
 }
 .cont-tecngologias > div{
-    transition: .3s;
+    transition: .1s;
     position: relative;
     display: flex;
     justify-content: center;
@@ -183,7 +236,13 @@
 .javascript:hover::before,
 .git:hover::before,
 .nodejs:hover::before,
-.nginex:hover::before{
+.nginex:hover::before,
+.auto:hover::before,
+.solucion:hover::before,
+.team:hover::before,
+.learn:hover::before,
+.proactivo:hover::before,
+.comunicacion:hover::before{
     transition: .3s;
     opacity: 1;
     animation: motionafter ease .1s ;
@@ -201,9 +260,16 @@
 .javascript:hover,
 .git:hover,
 .nodejs:hover,
-.nginex:hover{
-    transition: .3s;
+.nginex:hover,
+.auto:hover,
+.solucion:hover,
+.team:hover,
+.learn:hover,
+.proactivo:hover,
+.comunicacion:hover{
+    transition: .1s;
     border: 8px solid rgba(0, 8, 83, 0.65);
+    transform: scale(1.1);
 }
 .react::before{content: 'React & R.Native';}
 .redux::before{content: 'Redux';}
@@ -216,3 +282,136 @@
 .nodejs::before{content: 'Node.js';}
 .nginex::before{content: 'Nginex';}
 
+.skills-personales{
+    position: relative;
+    top: 10%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 70vw;
+    height: 70vh;
+    align-items: center;
+    justify-items: center;
+    gap: 2rem;
+
+    /* background-color: aquamarine; */
+}
+.skills-personales > div{
+    transition: .1s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(195, 204, 219);
+    width: 45%;
+    height: 58%;
+    border-radius: 30%;
+    border:8px solid rgba(245, 222, 179, 0);
+    z-index: 7;
+}
+.auto::before,
+.solucion::before,
+.team::before,
+.learn::before,
+.proactivo::before,
+.comunicacion::before{
+    content: '';
+    display: flex;
+    text-align: center;
+    border-radius: 40% 40% 20% 20%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -68%;
+    left: 0%;
+    width: 100%;
+    font-weight: 800;
+    height: 60%;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    background-color: rgb(195, 204, 219);
+    opacity: 0;
+    z-index: 1;
+}
+.auto::before{content: 'Auto-suficiente (capacidad de trabajar solo sin complicaciones)';}
+.solucion::before{content: 'Buena resolución de problemas, sean técnicos o personales';}
+.team::before{content: 'Capacidad de adapatarme y trabajar en equipo';}
+.learn::before{content: 'Adoro aprender constantemente y enriquezer mis conocimientos';}
+.proactivo::before{content: 'Me considero una persona proactiva, tengo inciativa y me anticipo a problemas';}
+.comunicacion::before{content: 'Poseo una buena capacidad de comunicación';}
+
+.skills-h2{
+    position: relative;
+    top:2%;
+    font-size: 3rem;
+    color: beige;
+}
+@media(max-width:557px) {
+    .cont-tecngologias{
+        width: 100vw;
+        height: 50vh;
+        top: 0%;
+        gap:0;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .skills-personales{
+        top: -0%;
+        width: 100vw;
+        height: 40vh;
+        gap: 0;
+    }
+    .p-aptitud{
+        font-size: 2vw;
+        top: 0;
+    }
+    .skills-personales > div{
+        width: 70%;
+        height: 60%;
+    }
+    .skills-personales > div::before{
+        font-size: 2.5vw;
+        top: -90%;
+        border-radius: 10%;
+        height: 80%;
+    }
+    .solucion::before,
+    .learn::before,
+    .comunicacion::before{
+        top: unset !important;
+        left: unset !important;
+        bottom: -90%;
+    }
+    .cont-tecngologias > div{
+        width: 70%;
+        height: 55%;
+    }
+    .cont-tecngologias > div::before{
+        font-size: 3vw;
+    }
+    .react::before,
+    .sass::before,
+    .git::before{
+        left: 50%;
+        border-radius: 50% 50% 50% 0%;
+    }
+    .imgIco{
+        width: 80%;
+        height: 80%;
+    }
+    .btn-switcher{
+        position: absolute;
+        width: 25vw;
+        top: unset;
+        left: unset;
+        bottom: 12%;
+        right: 10%;
+    }
+    .skills-h2{
+        top: -10%;
+        font-size: 8vw;
+    }
+    .h3-tecnologias{
+        top: -10%;
+        font-size: 4vw;
+    }
+
+}

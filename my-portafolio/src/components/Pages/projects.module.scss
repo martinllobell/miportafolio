@@ -1,0 +1,121 @@
+.contDivsprueba{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+.particula {
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  
+  @for $i from 1 through 30 {
+    @keyframes particle-animation-#{$i} {
+      0% {
+        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 60px));
+      }
+      50% {
+        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 10px));
+      }
+      100% {
+        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 40px));
+      }
+    }
+    
+    .particula:nth-child(#{$i}){
+      animation: particle-animation-#{$i} 40s infinite alternate-reverse;
+      $size: random(5) + 1 + px;
+      opacity: random(50)/80;
+      height: $size;
+      width: $size;
+      animation-delay: -$i * .2s;
+      transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+      background:rgb(random(25)*90, 255, 255);
+    }
+  }
+.contMain{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-color:  rgb(0, 0, 0);
+}
+.contProject{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top:15%;
+    align-items: center;
+    width: 100vw;
+    height: 50vh;
+    z-index: 5;
+}
+.h2Projects{
+    font-size: 2vw;
+    color: aliceblue;
+}
+.contProject > div {
+    border-radius: 5%;
+    border:1px solid #b5cfccb2 ;
+    width: 25%;
+    height: 80%;
+}
+.imgCard{
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+}
+.ghostdiv{
+    transition: .2s;
+    position: absolute;
+    bottom: 00%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 1.3rem 1.3rem;
+    background-color: rgba(10, 13, 15, 0.575);
+    width: 100%;
+    height: 0%;
+    z-index: 5;
+}
+.countries,
+.yoagronomo,
+.carrusell{
+    transition: .2s;
+    opacity: .7;
+}
+.countries:hover > .ghostdiv,
+.yoagronomo:hover > .ghostdiv,
+.carrusell:hover > .ghostdiv{
+    transition: .2s;
+    height: 30%;
+    opacity: 1;
+}
+.countries:hover,
+.yoagronomo:hover,
+.carrusell:hover{
+    transition: .2s;
+    opacity: 1 !important;
+    transform: translateY(-10%) scale(1.1);
+    cursor: pointer;
+}
+.countries:hover .h2Card,
+.yoagronomo:hover .h2Card,
+.carrusell:hover .h2Card{
+    transition: .2s;
+    font-size: 2rem;
+    opacity: 1;
+}
+.h2Card{
+    transition: .2s;
+    font-size: 0rem;
+    color: whitesmoke;
+    opacity: 0;
+}

@@ -19,6 +19,7 @@ const aboutVariants = {
     },
     exit:{
         opacity:0,
+        y:'-50vh',
         transition:{
             ease:'easeInOut',
             duration: 0.5

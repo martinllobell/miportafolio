@@ -7,6 +7,7 @@ import Skills from './components/Pages/Skills';
 import Contact from './components/Pages/Contact';
 import NavBar from './components/NavBar/NavBar';
 import {AnimatePresence} from 'framer-motion'
+import Projects from './components/Pages/Proyects';
 
 function App() {
   const location = useLocation()
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/'><Home/></Route>
           <Route path='/about'><About/></Route>
           <Route path='/skills'><Skills/></Route>
+          <Route path='/projects'><Projects/></Route>
           <Route path='/contact'><Contact/></Route>
         </Switch>
       </AnimatePresence>
