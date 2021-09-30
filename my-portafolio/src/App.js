@@ -4,7 +4,7 @@ import Home from './components/Home/Home';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import About from './components/Pages/About';
 import Skills from './components/Pages/Skills';
-import Contact from './components/Pages/Contact';
+import Contact from './components/Pages/contact/Contact';
 import NavBar from './components/NavBar/NavBar';
 import {AnimatePresence} from 'framer-motion'
 import Projects from './components/Pages/Proyects';
